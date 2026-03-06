@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Websketch</title>
+</head>
+<body>
+
+    <div class="container"> 
+
+        <div class="websketch">
+
+            <!-- Top label -->
+            <div class="top-label">Websketch<br><p style="font-size:12px;">Noel Bustillos</p></div>
+            
+            <!-- Drawing screen -->
+            <div class="screen-frame">
+                <canvas id="drawing-canvas" width="600" height="400"></canvas>
+            </div>
+            
+            <!-- Control knobs -->
+            <div class="controls">
+
+                <div class="knob-container">
+                    <div class="knob-base"></div>
+                    <div class="knob left-knob" id="left-knob">
+                        <div class="knob-pointer"></div>
+                    </div>
+                    <div class="knob-label"></div>
+                </div>
+
+                <div class="knob-container">
+                    <div class="knob-base"></div>
+                    <div class="knob right-knob" id="right-knob">
+                        <div class="knob-pointer"></div>
+                    </div>
+                    <div class="knob-label"></div>
+                </div>
+                
+            </div>
+
+        </div>
+        
+        <!-- Shake button -->
+        <div id="shake-button">
+            <p>Use AWSD or arrow keys to move. Press space bar or click here to shake and clear the screen.</p>
+        </div>
+
+    </div>
+
+<script src="assets/js/myscript.js"></script>
+</body>
+</html>
