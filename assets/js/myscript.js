@@ -1,3 +1,5 @@
+alert('Welcome to Websketch 2.0! control with onscreen buttons, "wasd" keys, or arrow keys, and space or enter to clear screen.');
+
 class websketch {
     constructor() {
         // Set up canvas and drawing settings
@@ -39,8 +41,10 @@ class websketch {
     
     // Get references to knobs and shake button
     initializeElements() {
-        this.leftKnob = document.getElementById('left-knob');
-        this.rightKnob = document.getElementById('right-knob');
+        this.leftButton = document.getElementById('left-button');
+        this.rightButton = document.getElementById('right-button');
+        this.upButton = document.getElementById('up-button');
+        this.downButton = document.getElementById('down-button');
         this.shakeButton = document.getElementById('shake-button');
     }
     
@@ -155,58 +159,39 @@ class websketch {
         this.setupShakeButton();
     }
     
-    // Mouse controls for knobs
+    // Mouse and touch controls for buttons
     setupKnobControls() {
-        // Left knob controls horizontal movement
-        this.leftKnob.addEventListener('mousedown', (e) => {
-            e.preventDefault();
-            const rect = this.leftKnob.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            if (e.clientX < centerX) {
-                this.moveLeft();
-            } else {
-                this.moveRight();
-            }
-        });
-        // Right knob controls vertical movement
-        this.rightKnob.addEventListener('mousedown', (e) => {
-            e.preventDefault();
-            const rect = this.rightKnob.getBoundingClientRect();
-            const centerY = rect.top + rect.height / 2;
-            if (e.clientY < centerY) {
-                this.moveUp();
-            } else {
-                this.moveDown();
-            }
-        });
-        // Touch controls for knobs
-        this.setupTouchControls();
-    }
-    
-    // Touch controls for knobs
-    setupTouchControls() {
-        this.leftKnob.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            const rect = this.leftKnob.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const touchX = e.touches[0].clientX;
-            if (touchX < centerX) {
-                this.moveLeft();
-            } else {
-                this.moveRight();
-            }
-        });
-        this.rightKnob.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            const rect = this.rightKnob.getBoundingClientRect();
-            const centerY = rect.top + rect.height / 2;
-            const touchY = e.touches[0].clientY;
-            if (touchY < centerY) {
-                this.moveUp();
-            } else {
-                this.moveDown();
-            }
-        });
+        // Helper to attach listeners for starting and stopping movement
+        const addButtonListeners = (element, direction, action) => {
+            if (!element) return;
+
+            const start = (e) => {
+                e.preventDefault();
+                action(); // Move once immediately
+                this.startKeyTimer(direction); // Start timer for continuous movement
+            };
+
+            const end = (e) => {
+                e.preventDefault();
+                this.stopKeyTimer(direction); // Stop continuous movement
+            };
+
+            // Mouse events
+            element.addEventListener('mousedown', start);
+            element.addEventListener('mouseup', end);
+            element.addEventListener('mouseleave', end); // Stop if mouse leaves button while pressed
+
+            // Touch events
+            element.addEventListener('touchstart', start);
+            element.addEventListener('touchend', end);
+            element.addEventListener('touchcancel', end); // Stop if touch is interrupted
+        };
+
+        // Attach listeners to the new buttons
+        addButtonListeners(this.leftButton, 'left', () => this.moveLeft());
+        addButtonListeners(this.rightButton, 'right', () => this.moveRight());
+        addButtonListeners(this.upButton, 'up', () => this.moveUp());
+        addButtonListeners(this.downButton, 'down', () => this.moveDown());
     }
     
     // Keyboard controls for movement and shake

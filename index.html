@@ -6,52 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Websketch</title>
+    <title>Websketch 2.0</title>
 </head>
 <body>
+<div class="content">
+<!---->
+<div class="index-content">
+<!--------->
 
-    <div class="container"> 
+    <div class="websketch">
 
-        <div class="websketch">
 
-            <!-- Top label -->
-            <div class="top-label">Websketch<br><p style="font-size:12px;">Noel Bustillos</p></div>
-            
-            <!-- Drawing screen -->
-            <div class="screen-frame">
-                <canvas id="drawing-canvas" width="600" height="400"></canvas>
-            </div>
-            
-            <!-- Control knobs -->
-            <div class="controls">
-
-                <div class="knob-container">
-                    <div class="knob-base"></div>
-                    <div class="knob left-knob" id="left-knob">
-                        <div class="knob-pointer"></div>
-                    </div>
-                    <div class="knob-label"></div>
-                </div>
-
-                <div class="knob-container">
-                    <div class="knob-base"></div>
-                    <div class="knob right-knob" id="right-knob">
-                        <div class="knob-pointer"></div>
-                    </div>
-                    <div class="knob-label"></div>
-                </div>
-                
-            </div>
-
-        </div>
+        <!-- Top label -->
+        <div class="top-label">Websketch by Noel Bustillos</div>
         
-        <!-- Shake button -->
-        <div id="shake-button">
-            <p>Use AWSD or arrow keys to move. Press space bar or click here to shake and clear the screen.</p>
+        <!-- Drawing screen -->
+        <div class="screen-frame">
+            <canvas id="drawing-canvas" ></canvas>
         </div>
+        <!-- reset button -->
+        <div>
+            <div id="shake-button"></div>
+        </div>
+        <p>Clear screen</p>
+        
+        <!-- Control section -->
+        <div class="control-section">
+            
+            <!-- Horizontal buttons -->
+            <div class="lr-button">
+                <div id="left-button">left</div>
+                <div id="right-button">right</div>
+            </div>
+            <!-- Vertical buttons -->
+            <div class="ud-button">
+                <div id="up-button">up</div>
+                <div id="down-button">down</div>
+            </div>
+
+        </div>
+
 
     </div>
 
+
+
+
+
+<!--------->
+</div>
+<!---->
+</div>
+<footer>
+    <p class="copyright">
+        &nbsp;Noel Bustillos &copy;2026 
+    </p>
+</footer>
 <script src="assets/js/myscript.js"></script>
 </body>
 </html>

@@ -1,0 +1,33 @@
+/*-device----*/
+.websketch {
+    background: #c00018;
+    box-shadow: inset -11px -11px 8px #77000f,
+                inset 11px 11px 8px #ff0021;
+}
+    .top-label {
+    text-align: center;
+    color: goldenrod;
+    font-size: 18px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-family: 'Caveat', cursive;
+}
+    /*------*/
+    .screen-frame {
+        background: #c00018;
+        box-shadow: inset 11px 11px 36px #a30014,
+                    inset -11px -11px 36px #dd001c;
+    }
+        #drawing-canvas {
+            background: #d1d1d1;
+            box-shadow: inset 6px 6px 5px #b4b4b4,
+                        inset -6px -6px 5px #eeeeee;
+            border: 1px solid #808080;
+        }
+    /*------*/
+
+    /*------*
+        .lr-button div, .ud-button div {
+            outline:1px solid rgba(73, 73, 73, 0.755);
+        }
+/*-------------------------------*/
