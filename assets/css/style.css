@@ -1,33 +1,68 @@
+/*----------------------------*/
+html {background-color:black;}
+body {background-color:whitesmoke;}
+.content {background-color:gray;}
+/*----------------------------*/
 /*-device----*/
 .websketch {
-    background: #c00018;
-    box-shadow: inset -11px -11px 8px #77000f,
-                inset 11px 11px 8px #ff0021;
+border-radius: 20px;
+background: #c00018;
+box-shadow: inset -11px -11px 8px #77000f,
+            inset 11px 11px 8px #ff0021;
 }
-    .top-label {
+/*-top label-----*/
+.toplabel {
     text-align: center;
-    color: goldenrod;
     font-size: 18px;
     font-weight: bolder;
     letter-spacing: 2px;
     font-family: 'Caveat', cursive;
+    color: goldenrod;
 }
-    /*------*/
-    .screen-frame {
-        background: #c00018;
-        box-shadow: inset 11px 11px 36px #a30014,
-                    inset -11px -11px 36px #dd001c;
-    }
-        #drawing-canvas {
-            background: #d1d1d1;
-            box-shadow: inset 6px 6px 5px #b4b4b4,
-                        inset -6px -6px 5px #eeeeee;
-            border: 1px solid #808080;
-        }
-    /*------*/
+/*--screen frame----*/
+.screen-frame {
+border-radius: 6px;
+background: #c00018;
+box-shadow: inset 11px 11px 36px #a30014,
+            inset -11px -11px 36px #dd001c;
+}
+#drawing-canvas {
+border: 1px solid #808080;
+border-radius: 6px;
+background: #d1d1d1;
+box-shadow: inset 6px 6px 5px #b4b4b4,
+            inset -6px -6px 5px #eeeeee;
+}
+/*-reset button-----*/
+.websketch :nth-child(3) {
+border-radius: 100%;
+background: #c00018;
+box-shadow: inset 16px 16px 32px #920012,
+            inset -16px -16px 32px #ee001e;
+}
+#shake-button {
+border-radius: 50%;
+background: linear-gradient(145deg, #f0f0f0, #cacaca);
+box-shadow:  20px 20px 60px #828282,
+             -20px -20px 60px #ffffff;
+}
+.websketch p {
+    font-size:10px;
+}
+/*------ buttons ------*/
+#left-button, #right-button, #up-button, #down-button {
+    font-size: 14px;
+    font-weight: bold;
 
-    /*------*
-        .lr-button div, .ud-button div {
-            outline:1px solid rgba(73, 73, 73, 0.755);
-        }
+color: #333;
+border-radius: 50%;
+background: #a9afaf;
+box-shadow: inset -5px -5px 10px #585b5b,
+            inset 5px 5px 10px #faffff;
+}
+#left-button:active, #right-button:active, #up-button:active, #down-button:active {
+background: #9fa6a6;
+box-shadow: inset -7px -7px 14px #464949,
+            inset 7px 7px 14px #ffffff;
+}
 /*-------------------------------*/

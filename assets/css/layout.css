@@ -1,18 +1,3 @@
-/*----------------------------
-body.show-outlines * {
-    outline: 2px dotted black;
-}
-* {outline: 2px dotted black;}
-html {background-color:black;}
-body {background-color:whitesmoke;}
-/*----------------------------*/
-body.show-outlines * {
-    outline: 2px dotted black;
-}
-html {background-color:black;}
-body {background-color:whitesmoke;}
-.content {background-color:gray;}
-#toggle-outlines {background-color: red;}
 /*----------------------------*/
 html, body {
     min-height: 100%;
@@ -23,27 +8,23 @@ html, body {
         flex-direction: column;
         min-height: 100dvh;
     }
-        header, footer {
-            display:flex;
-            flex-direction: row;
-            flex: 0 0 50px;
-        }
         .content {
             display: flex;
             flex: 1 1 auto;
             justify-content: center;
         }
-            /*pages---*/
             .index-content {
                 display:flex;
                 min-height:100%;
                 width:100%;
             }
-
-/*-----header/footer---------------*/
+        footer {
+            display:flex;
+            flex-direction: row;
+            flex: 0 0 50px;
+        }
 /*index----------------------------*/
 .index-content {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -54,65 +35,58 @@ html, body {
     flex-direction: column;
     align-items: center;
     position: relative;
+
     width:450px;
     height:550px;
     padding:20px;
-    border-radius: 20px;
     gap:10px;
     cursor:grab;
 }
-    /*------*/
+/*-top label-----*/
     .toplabel {
         height:7%;
         width:10%;
     }
-    /*------*/
+/*--screen frame----*/
     .screen-frame {
         display:flex;
         justify-content: center;
         align-items: center;
-        border-radius: 6px;
+
         width: 90%;
         height: 60%;
     }
         #drawing-canvas {
-            border-radius: 6px;
             display: block;
-            cursor: crosshair;
+
             width: 97%;
             height: 93%;
+            cursor: crosshair;
         }
-    /*------*/
+/*-reset button-----*/
     .websketch :nth-child(3) {
         display:flex;
         justify-content: center;
         align-items: center;
+
         height:6%;
         width:6%;
-border-radius: 100%;
-background: #c00018;
-box-shadow: inset 16px 16px 32px #920012,
-            inset -16px -16px 32px #ee001e;
     }
         #shake-button {
             height:70%;
             width:70%;
-            border-radius: 50%;
-background: linear-gradient(145deg, #f0f0f0, #cacaca);
-box-shadow:  20px 20px 60px #828282,
-             -20px -20px 60px #ffffff;
         }
     .websketch p {
-        font-size:10px;
         margin:0;
         padding:0;
     }
-    /*------*/
+/*-control section-----*/
     .control-section {
         display:flex;
         flex-direction:row;
         justify-content: center;
         align-items: center;
+
         height:35%;
         width:85%;
         gap:120px;
@@ -120,60 +94,42 @@ box-shadow:  20px 20px 60px #828282,
     }
     .lr-button, .ud-button {
         display:flex;
+
         gap:20px;
-
-
     }
     .ud-button {
         flex-direction:column;
     }
- 
-/*------ Inner Clickable Buttons (The grey part) ------*/
+/*------ buttons ------*/
 #left-button, #right-button, #up-button, #down-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 14px;
-    font-weight: bold;
+
     height: 70px;
     width: 70px;
-    border-radius: 50%;
-    background: #a9afaf;
-    box-shadow: inset -5px -5px 10px #585b5b,
-                inset 5px 5px 10px #faffff;
-    transition: all 0.1s ease-in-out;
     cursor: pointer;
-    color: #333;
-    user-select: none; /* Prevents highlighting text on click */
-}
-
-/*------ "Pressed" State for Inner Buttons ------*/
-#left-button:active, #right-button:active, #up-button:active, #down-button:active {
-    background: #9fa6a6; /* Darkens background on click */
-    box-shadow: inset -7px -7px 14px #464949, /* Deeper shadow on click */
-                inset 7px 7px 14px #ffffff;
+    user-select: none;
+    transition: all 0.1s ease-in-out;
 }
 /*-------------------------------*/
-/*-------------------------------*/
+/*-responsiveness-------------------*/
 /*---SMALLER THAN-------------------*/
 @media screen and (max-width: 600px) {
-    /* Add this rule to lock the whole page */
     html, body {
         height: 100%;
         overflow: hidden;
     }
-
     .websketch {
         height: 100%;
         width: 100%;
-        border-radius: 0; /* Remove border-radius for full-screen */
-        gap: 5px; /* Reduce gap for smaller screens */
+        border-radius: 0;
+        gap: 5px;
     }
     .websketch :nth-child(3) {
         height:6%;
         width:8%;  
     }  
-
     footer {
         display: none;
     }
